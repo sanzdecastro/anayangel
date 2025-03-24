@@ -7,6 +7,8 @@
     --breakpoint-tablet: '450px';
 
     --color-green: #1F3004;
+    --color-green-darker: #0c1301;
+    --color-gold: #ffd51b;
     --color-beige: #FFF8EC;
 
     --text-display: clamp(10px, calc((34 / 393) * 100vw), 34px);
@@ -144,6 +146,11 @@ body {
                 rounded-b-md
                 text-beige
                 cursor-pointer;
+                &:hover {
+                    @apply
+                    text-gold
+                    bg-green-darker;
+                }
             }
         }
     }
