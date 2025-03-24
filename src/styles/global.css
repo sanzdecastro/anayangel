@@ -6,6 +6,7 @@
 
     --breakpoint-xs: 450px;
 
+    --color-back: #f6ffd9;
     --color-green: #1F3004;
     --color-green-darker: #0c1301;
     --color-gold: #ffd51b;
@@ -49,7 +50,7 @@
 body {
     @apply
     overflow-hidden
-    bg-green;
+    bg-back;
 }
 .wrapper {
    @apply
@@ -91,6 +92,8 @@ body {
   }
 
   .front {
+    @apply
+    overflow-hidden;
     p,a {
         @apply
         opacity-0;
