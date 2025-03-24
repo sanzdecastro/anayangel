@@ -50,6 +50,7 @@ body {
 }
 .wrapper {
    @apply
+   overflow-hidden
    w-full
    h-[100dvh]
    flex
