@@ -1,0 +1,151 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+---
+
+<Layout>
+
+	<div class="wrapper">
+		<div class="flip-container">
+			<div class="card">
+				<div class="front">
+					<div class="circle-container absolute w-full h-full flex items-center">
+						<img class="circle absolute opacity-10 scale-110 animate-[spin_10s_linear_infinite]" src="/rotate.svg">
+					</div>
+					
+					<div class="decoration-1">
+						<div class="decoration-2">
+							<div class="claim">
+								<h1 class="">Ana & Ángel</h1>
+								<p class="invitation leading-5">Os invitamos <br>a nuestra boda</p>
+							</div>
+							
+							
+							<div class="info flex flex-col items-center gap-3 -mt-16">
+								<img class="anillo w-[14vw] mb-10 max-w-[70px]" src="/ring.png">
+								<p>18 de octubre de 2025</p>
+								<div class="flex justify-center gap-2"><p>13:00h</p><span>Casas Viejas</span><p>Benalup</p></div>
+								<p>Fairplay Golf & Spa Resort</p>
+							</div>
+							<div class="dummy"></div>
+							<a class="cta">Confirmar asistencia</a>
+						</div>
+					</div>
+				</div>
+				<div class="back">
+					<div class="decoration-1">
+						<div class="decoration-2">
+							<h1 class="">A&Á</h1>
+							<div class="info flex flex-col gap-3 -mt-16">
+								<a target="_blank" href="https://maps.app.goo.gl/Q2QahHd6C9pj8MVy9">Mapa</a>
+								<a href="">Alojamiento</a>
+							</div>
+							<a class="cta">Confirmar asistencia</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="!text-mini cursor-pointer details text-white pt-16 pb-2 border-b border-white">Más detalles</p>
+	</div>
+		
+	<script>
+		import { gsap } from "gsap";
+
+		gsap.set(".flip-container", {
+			autoAlpha: 0,
+			yPercent: 20,
+			rotate: 15,
+			
+		})
+
+		gsap.set(".claim", {
+			autoAlpha: 0,
+			yPercent: 150,
+		})
+
+		gsap.set("p, span", {
+			autoAlpha: 0,
+			
+		})
+
+		gsap.set(".cta", {
+			autoAlpha: 0,
+			yPercent: 100,
+		})
+
+
+		gsap.set(".anillo, .circle-container", {
+			autoAlpha: 0,
+			rotation: -10,
+			scale: 1.1,
+		})
+
+		const tl = gsap.timeline();
+
+		tl.to(".flip-container", {
+			autoAlpha: 1,
+			yPercent: 0,
+			rotate: 0,
+			duration: .6,
+		}).to(".claim, .claim p.invitation", {
+			autoAlpha: 1,
+			duration: .8,
+		}).to(".claim p", {
+			delay: 1,
+			autoAlpha: 0,
+		}).to(".claim", {
+			autoAlpha: 1,
+			duration: .4,
+			yPercent: 0,
+		}).to(".info p, .info span", {
+			autoAlpha: 1,
+			duration: 1,
+			yPercent: 0,
+		}).to(".circle-container", {
+			autoAlpha: 1,
+			duration: 1,
+			rotation: 0,
+			scale: 1,
+		}, '<').to(".anillo", {
+			autoAlpha: 1,
+			duration: 1,
+			rotation: 0,
+			scale: 1,
+		}, '<').to(".cta", {
+			autoAlpha: 1,
+			yPercent: 0,
+		}).to(".details", {
+			autoAlpha: 1,
+		})
+
+		function flipCard() {
+		  const button = document.querySelector(".details");
+		  const card = document.querySelector(".flip-container"); 
+	
+			if (button) {
+				button.addEventListener("click", () => {
+					if(card) {
+						card.classList.toggle("back-active");
+					}
+			});
+		  }
+		}
+		
+		flipCard();
+
+	</script>
+	
+	
+</Layout>
+
+<style>
+
+</style>
+
