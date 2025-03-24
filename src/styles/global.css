@@ -58,19 +58,20 @@ body {
    h-[100dvh]
    flex
    flex-col
-   p-8
+   p-10
    justify-center
    items-center;
 }
 
 .flip-container {
-    @apply
-    bg-transparent
-    tablet:w-1/5;
-    height: 60vh;
-    max-height: 60vh;
+  
+
     width: 100%;
     perspective: 1000px; 
+    @apply
+    md:max-h-[70vh]
+    md:h-[70vh]
+    bg-transparent;
   }
 
   .flip-container.back-active .card {
@@ -105,9 +106,10 @@ body {
 .card {
     @apply
     /* p-2 */
-    w-auto
+    w-full
+    md:w-auto
     m-auto
-    h-full
+    md:h-full
     aspect-[357/566]
     rounded-2xl
     text-center
