@@ -27,6 +27,7 @@
 
     --spacing-16: clamp(10px, calc((16 / 393) * 100vw), 16px);
     --spacing-10: clamp(8px, calc((10 / 393) * 100vw), 10px);
+
 }
 
 @font-face {
@@ -186,3 +187,4 @@ span {
     font-Millionaire-Script
     text-regular;
 }
+
