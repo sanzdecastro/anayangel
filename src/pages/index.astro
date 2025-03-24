@@ -2,7 +2,8 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-
+const images = ["foto_1", "foto_2"];
+const image = images[Math.floor(Math.random() * images.length)];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -23,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
 						<div class="decoration-2">
 							<div class="claim opacity-0">
 								<h1 class="">Ana & Ángel</h1>
-								<img class="foto m-auto mb-16 mt-10 aspect-square w-50 overflow-hidden rounded-full object-cover" src="/foto_1.jpg">
+								<img class="foto m-auto mb-16 mt-10 aspect-square w-50 overflow-hidden rounded-full object-cover" src={`/${image}.jpg`} >
 								<p class="invitation leading-5">¡Nos casamos!</p>
 							</div>
 							
@@ -164,6 +165,8 @@ import Layout from '../layouts/Layout.astro';
 			});
 		  }
 		}
+
+		
 		
 		flipCard();
 
