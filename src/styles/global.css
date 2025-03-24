@@ -88,6 +88,13 @@ body {
 
   }
 
+  .front {
+    p,a {
+        @apply
+        opacity-0;
+    }
+  }
+
   .back {
     transform: rotateY(180deg);
     /* backface-visibility: visible;
@@ -135,6 +142,8 @@ body {
             overflow-hidden
             justify-between;
 
+           
+
             a.cta {
                 @apply
                 w-full
@@ -166,14 +175,14 @@ h1 {
 
 p, a {
     @apply
-    opacity-0
+
     font-Millionaire
     text-regular;
 }
 
 span {
     @apply
-    opacity-0
+
     font-Millionaire-Script
     text-regular;
 }

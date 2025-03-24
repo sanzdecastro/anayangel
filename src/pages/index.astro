@@ -16,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="card">
 				<div class="front">
 					<div class="circle-container absolute w-full h-full flex items-center">
-						<img class="circle absolute opacity-10 scale-110 animate-[spin_10s_linear_infinite]" src="/rotate.svg">
+						<img class="circle mt-16 absolute opacity-10 scale-110 animate-[spin_10s_linear_infinite]" src="/rotate.svg">
 					</div>
 					
 					<div class="decoration-1">
@@ -74,6 +74,7 @@ import Layout from '../layouts/Layout.astro';
 		gsap.set(".foto", {
 			autoAlpha: 0,
 			rotate: 30,
+			scale: .5,
 		})
 
 		gsap.set("p, span", {
@@ -100,12 +101,15 @@ import Layout from '../layouts/Layout.astro';
 			yPercent: 0,
 			rotate: 0,
 			duration: .6,
+		}).to(".claim", {
+			autoAlpha: 1,
+			duration: .8,
 		}).to(".foto", {
 			autoAlpha: 1,
 			rotate: 0,
 			duration: 1,
 			scale: 1,
-		}).to(".claim, .claim p.invitation", {
+		},"<").to(".claim p.invitation", {
 			autoAlpha: 1,
 			duration: .8,
 		}).to(".claim p", {
