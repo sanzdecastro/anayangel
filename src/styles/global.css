@@ -61,9 +61,10 @@ body {
 
 .flip-container {
     @apply
+    h-[60vh]
     max-h-[60vh]
     bg-transparent
-    w-full
+    w-[100vw]
     tablet:w-1/5;
     perspective: 1000px; 
   }
