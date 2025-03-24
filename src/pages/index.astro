@@ -166,8 +166,42 @@ const image = images[Math.floor(Math.random() * images.length)];
 		  }
 		}
 
+		function playSound(){
+			// Crea un objeto Audio con la ruta del archivo de sonido
+			const sonidoClick = new Audio('/the-rings-gollum-my-precious.mp3');
+
+			// Selecciona el elemento que desencadenará el evento
+			const button = document.querySelector(".anillo");
+
+			// Agrega un event listener para reproducir el sonido al hacer click
+			if(button) {
+				button.addEventListener('click', () => {
+					// Reinicia el sonido por si se hace click repetidamente
+					sonidoClick.currentTime = 0;
+					sonidoClick.play();
+
+					const tl = gsap.timeline();
+				
+					tl.to(".anillo", {
+						scale: 1.2,
+						rotate: 10,
+						yPercent: -10,
+					}).to(".anillo", {
+						scale: 1.2,
+						rotate: -10,
+						yPercent: 10,
+					}).to(".anillo", {
+						scale: 1,
+						rotate: 0,
+						yPercent: 0,
+					})
+				});
+			}			
+		}
+			
+
 		
-		
+		playSound();
 		flipCard();
 
 	</script>
