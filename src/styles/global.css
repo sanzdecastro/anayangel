@@ -86,8 +86,10 @@ body {
     h-full
     flex
     items-center
+    backface-hidden
     justify-center;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 
   }
 
