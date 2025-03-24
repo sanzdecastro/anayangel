@@ -166,12 +166,14 @@ h1 {
 
 p, a {
     @apply
+    opacity-0
     font-Millionaire
     text-regular;
 }
 
 span {
     @apply
+    opacity-0
     font-Millionaire-Script
     text-regular;
 }
