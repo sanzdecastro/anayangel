@@ -25,22 +25,68 @@ const image = images[Math.floor(Math.random() * images.length)];
 		</div>
 		<p class="introduction-text">¡Tenemos una gran noticia <br>que queremos compartir contigo!</p>
 
-		<div class="image-wrapper" >
+		<div class="image-wrapper mix-blend-multiply absolute" >
 			<img src="/flower1.jpg" class="flower-1" />
 		</div>
 		
 		<div class="content">
-			<h2>Ana y Ángel</h2>
-			<p>¡Nos casamos!</p>
-			<p>Estamos encantados de invitarte a nuestra boda</p>
-			<p>El próximo 28 de octubre de este años nos gustaría compartir contigo un día muy especial. A continuación, os dejamos más detalles sobre el evento.</p>
-			<p>¡Confírmanos que vienes!</p>
+			<div class="content-wrapper">
+				<h2 class="effect-opacity">Ana y Ángel</h2>
+				<p class="effect-opacity mb-16">¡Nos casamos!</p>
+				<div class="image-wrapper image-two rotate-3 mb-24">
+					<img src="/pareja.jpg" />
+				</div>
+				
+				<section class="mb-24 circle-container relative w-full h-full flex items-center aspect-square">
+					<img class="circle absolute top-0 scale-120 left-0 opacity-10 animate-[spin_10s_linear_infinite]" src="/rotate.svg">
+					<div class="w-full effect-opacity h-full absolute top-0 left-0 flex flex-col justify-center items-center">
+						<p class="!mb-0.5">18 de octubre de 2025</p>
+						<div class="flex justify-center gap-2"><p class="!mb-0.5">13:00h</p><span class="font-Millionaire-Script">Casas Viejas</span><p class="!mb-0.5">Benalup</p></div>
+						<p class="!mb-0.5">Fairplay Golf & Spa Resort</p>
+					</div>
+				</section>
+				<section class="mb-24 effect-opacity">
+					<p>Estamos encantados <br>de invitarte a <span class="font-Millionaire-Script">nuestra boda</span></p>
+					<p>El próximo 18 de octubre <br> nos gustaría <span class="font-Millionaire-Script">compartir contigo</span> <br>este día tan especial.</p>
+					<p>¡Confírmanos que vienes!</p>
+				</section>
+				<section class="mb-24 effect-opacity">
+					<h3 class="mb-12">Lugar<br> de celebración</h3>
+					<div class="image-wrapper mb-10 aspect-square overflow-hidden rounded-md">
+						<img class="h-full" src="/spa.jpg" />
+					</div>
+					<div class="flex justify-center items-center flex-col gap-2 mb-5">
+						<a href="https://www.fairplayresort.com/es/"><span class="font-Millionaire-Script">Fairplay Golf & Spa Resort</span><br> en Benalup</a>
+						<a class="underline underline-offset-2" target="_blank" href="https://maps.app.goo.gl/Q2QahHd6C9pj8MVy9">Ver en el mapa</a>
+					</div>
+					
+				</section>
+				<section class="mb-24 effect-opacity">
+					<h3>¿Te quedas la noche?</h3>
+					<p>Te dejamos algunas opciones donde pasar la noche si lo necesitas:</p>
+					<p class="text-xs">Te recomendamos que reserves <br>con antelación, ya que el hotel <br>puede estar completo.</p>
+					<p class="text-xs">Si necesitas ayuda, <br>no dudes en contactarnos.</p>
+				</section>
+				<section class="mb-24 effect-opacity">
+					<h3>Regalo</h3>
+					<p>El mayor regalo que podéis hacernos es estar con vuestra presencia y compartir con nosotros la alegría</p>
+					<p>Si, además, quieres ayudarnos para darnos un capricho, te dejamos nuestro número de cuenta:</p>
+				</section>
+				<section class="mb-24 effect-opacity">
+					<h3>Álbum de fotos</h3>
+					<p>¡Hemos creado un álbum digital donde nos gustaría que nos pasaras las fotos después de la ceremonia!</p>
+				</section>
+				
+			</div>
+			
+			
 		</div>
 	</div>
 		
 	<script>
 		import gsap from "gsap";
-
+		import { ScrollTrigger } from "gsap/ScrollTrigger";
+		gsap.registerPlugin(ScrollTrigger);
 
 		// Animación intro
 		const tl = gsap.timeline({delay: 0.5});
@@ -119,6 +165,8 @@ const image = images[Math.floor(Math.random() * images.length)];
 				envelopeGroupClosed?.classList.add("hidden");
 				envelopeGroupOpened?.classList.add("block");
 
+				const imageTwo = document.querySelector(".image-two");
+
 				const tlOutEnvelope = gsap.timeline({
 					delay: 0.5,
 				});
@@ -137,11 +185,37 @@ const image = images[Math.floor(Math.random() * images.length)];
 				},'<').to(content, {
 					yPercent: 0,
 					duration: 1,
-				},'<')
+				},'<').to(imageTwo, {
+					rotate: -5,
+					duration: 1,
+					ease: "power2.inOut",
+				})
 			})
 		}
 
-		
+		const elems = document.querySelectorAll(".effect-opacity");
+
+		elems.forEach(el => {		
+			gsap.set(el, { 
+				autoAlpha: 0,
+				yPercent: 10,
+			});
+
+			gsap.to(el, {
+				autoAlpha: 1,
+				duration: 1,
+				yPercent: 0,
+				ease: "power2.inOut",
+				scrollTrigger: {
+					scroller: ".content", 
+					trigger: el,
+					start: "top bottom",      
+					end:   "center center",   
+					scrub: 1,
+					toggleActions: "play none none none",
+				}
+			});
+		});
 
 
 

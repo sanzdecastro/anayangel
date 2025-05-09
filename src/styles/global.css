@@ -45,6 +45,8 @@
 
 body {
    @apply
+   h-[100vh]
+   overflow-hidden
    flex
    justify-center
    items-center;
@@ -57,10 +59,7 @@ p, a {
 
 .image-wrapper {
     @apply
-     mix-blend-multiply
-
     z-0
-    absolute
     top-0
     flex
     justify-center
@@ -82,35 +81,9 @@ p, a {
 
 
 
-.content {
-    @apply
-    p-7
-    text-center
-    opacity-0
-    z-10
-    absolute
-    top-0
-    left-0
-    w-full
-    h-full
-    bg-white;
-
-    h2 {
-        @apply
-        block
-        mb-48
-        text-display
-        font-Millionaire-Script;
-    }
-
-    p {
-        @apply
-        mb-1;
-    }
-}
-
 .wrapper {
     @apply
+    relative
     p-7
     md:rounded-2xl
     bg-beige
@@ -123,14 +96,6 @@ p, a {
     max-w-[400px]
     md:max-h-[750px]
     overflow-hidden;
-
-    span {
-        @apply
-        mt-7
-        text-xs
-        text-green
-        font-Millionaire;
-    }
 
     h1 {
         @apply
@@ -197,4 +162,70 @@ p, a {
             left-0;
         }
     }
+}
+
+
+.content {
+    @apply
+    pt-8
+    bg-amber-50
+    opacity-0
+    z-10
+    absolute
+    top-0
+    left-0
+    w-full
+    overflow-x-hidden
+    overflow-y-scroll
+    h-[100vh];
+
+    .content-wrapper {
+        @apply
+        w-full
+        overflow-x-hidden
+        p-7
+        text-center;
+
+         h2 {
+            @apply
+            tracking-tighter
+            block
+            mb-4
+            text-display
+            font-Millionaire-Script;
+        }
+
+        h3 {
+            @apply
+            block
+            tracking-tighter
+            mb-4
+            text-2xl
+            font-Millionaire-Script;
+        }
+
+        
+        .image-two {
+            @apply
+            my-16
+            rounded-md
+            h-auto
+            w-full
+            overflow-hidden
+            aspect-square;
+            img {
+                @apply
+                h-full
+                w-full
+                object-cover;
+            }
+        }
+
+        p {
+            @apply
+            mb-3;
+        }
+    }
+
+   
 }
