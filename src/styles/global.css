@@ -24,10 +24,6 @@
     --text-link: clamp(10px, calc((20 / 393) * 100vw), 20px);
     --text-link--line-height: 100%;
 
-    --rounded-special: calc((18/393) * 100vw);
-
-    --spacing-16: clamp(10px, calc((16 / 393) * 100vw), 16px);
-    --spacing-10: clamp(8px, calc((10 / 393) * 100vw), 10px);
 
 }
 
@@ -48,150 +44,157 @@
 }
 
 body {
-    @apply
-    overflow-hidden
-    bg-back;
-}
-.wrapper {
    @apply
-   overflow-hidden
-   w-full
-   h-[100dvh]
    flex
-   flex-col
-   p-16
    justify-center
    items-center;
 }
 
-.flip-container {
-  
-
-    width: 100%;
-    perspective: 1000px; 
+p, a {
     @apply
-    xs:max-h-[70vh]
-    xs:h-[70vh]
-    bg-transparent;
-  }
+    font-Millionaire;
+}
 
-  .flip-container.back-active .card {
-    transform: rotateY(180deg);
-  }
-
-  .front, .back {
+.image-wrapper {
     @apply
+     mix-blend-multiply
+
+    z-0
     absolute
+    top-0
+    flex
+    justify-center
+    items-center
+    left-0
+    w-full
+    h-full;
+    img {
+        @apply
+        h-full
+        object-cover;
+    }
+}
+
+.flower-1 {
+    @apply
+    opacity-0;
+}
+
+
+
+.content {
+    @apply
+    p-7
+    text-center
+    opacity-0
+    z-10
+    absolute
+    top-0
+    left-0
     w-full
     h-full
+    bg-white;
+
+    h2 {
+        @apply
+        block
+        mb-48
+        text-display
+        font-Millionaire-Script;
+    }
+
+    p {
+        @apply
+        mb-1;
+    }
+}
+
+.wrapper {
+    @apply
+    p-7
+    md:rounded-2xl
+    bg-beige
+    w-[100vw]
+    h-[100vh]
     flex
     items-center
-    backface-hidden
-    justify-center;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-
-  }
-
-  .front {
-    @apply
+    justify-center
+    flex-col
+    max-w-[400px]
+    md:max-h-[750px]
     overflow-hidden;
-    p,a {
+
+    span {
         @apply
-        opacity-0;
+        mt-7
+        text-xs
+        text-green
+        font-Millionaire;
     }
-  }
 
-  .back {
-    transform: rotateY(180deg);
-    /* backface-visibility: visible;
-    background-color: #FFF8EC; */
-  }
-
-.card {
-    @apply
-    /* p-2 */
-    w-full
-    xs:w-auto
-    m-auto
-    xs:h-full
-    aspect-[357/566]
-    rounded-2xl
-    text-center
-    bg-beige
-    font-Millionaire-Script;
-    position: relative;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-
-    .decoration-1 {
+    h1 {
         @apply
-        overflow-hidden
-        rounded-xl
+        opacity-0
+        tracking-tighter
+        text-display
+        font-Millionaire-Script;
+    }
+
+    .introduction-text {
+        @apply
+        opacity-0
+        text-center
+    }
+}
+
+.block {
+    @apply
+    !block;
+}
+
+.pointer-events-auto {
+    @apply
+    !pointer-events-auto;
+}
+
+.envelope-wrapper {
+    @apply
+    
+    -mt-[20%]
+    p-7
+    w-full
+    flex
+    justify-center
+    items-center;
+
+    .envelope-group {
+        @apply
+        pointer-events-none
+        mix-blend-luminosity
         w-full
-        h-full
-        p-2
-        border-2
-        border-green
-        border-solid;
+        relative
+        aspect-square
+        flex
+        items-center
+        justify-center
+        flex-col;
 
-        .decoration-2 {
+
+        .sobre-close {
             @apply
-            rounded-md
             w-full
-            h-full
-            /* p-2 */
-            border
-            border-green
-            border-solid
-            flex
-            flex-col
-            items-center
-            overflow-hidden
-            justify-between;
+            absolute
+            bottom-0
+            left-0;
+        }
 
-           
-
-            a.cta {
-                @apply
-                w-full
-                pt-10
-                pb-16
-                font-Millionaire-Script
-                bg-green
-                text-link
-                rounded-b-md
-                text-beige
-                cursor-pointer;
-                &:hover {
-                    @apply
-                    text-gold
-                    bg-green-darker;
-                }
-            }
+        .sobre-open {
+            @apply
+            hidden
+            w-full
+            absolute
+            bottom-0
+            left-0;
         }
     }
 }
-
-h1 {
-    @apply
-    p-16
-    pt-4
-    tracking-tight
-    text-display;
-}
-
-p, a {
-    @apply
-
-    font-Millionaire
-    text-regular;
-}
-
-span {
-    @apply
-
-    font-Millionaire-Script
-    text-regular;
-}
-
