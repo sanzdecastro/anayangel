@@ -50,27 +50,91 @@ const image = images[Math.floor(Math.random() * images.length)];
 					<p>El próximo 18 de octubre <br> nos gustaría <span class="font-Millionaire-Script">compartir contigo</span> <br>este día tan especial.</p>
 					<p>¡Confírmanos que vienes!</p>
 				</section>
+
+				<a class="cta">Confirmar asistencia</a>
+
 				<section class="mb-24 effect-opacity">
-					<h3 class="mb-12">Lugar<br> de celebración</h3>
+					<h3 class="!mb-10">Lugar<br> de celebración</h3>
 					<div class="image-wrapper mb-10 aspect-square overflow-hidden rounded-md">
 						<img class="h-full" src="/spa.jpg" />
 					</div>
 					<div class="flex justify-center items-center flex-col gap-2 mb-5">
 						<a href="https://www.fairplayresort.com/es/"><span class="font-Millionaire-Script">Fairplay Golf & Spa Resort</span><br> en Benalup</a>
-						<a class="underline underline-offset-2" target="_blank" href="https://maps.app.goo.gl/Q2QahHd6C9pj8MVy9">Ver en el mapa</a>
+						<a class="underline underline-offset-4" target="_blank" href="https://maps.app.goo.gl/Q2QahHd6C9pj8MVy9">Ver en el mapa</a>
 					</div>
 					
 				</section>
-				<section class="mb-24 effect-opacity">
-					<h3>¿Te quedas la noche?</h3>
-					<p>Te dejamos algunas opciones donde pasar la noche si lo necesitas:</p>
-					<p class="text-xs">Te recomendamos que reserves <br>con antelación, ya que el hotel <br>puede estar completo.</p>
-					<p class="text-xs">Si necesitas ayuda, <br>no dudes en contactarnos.</p>
+				<section class="mb-24 ">
+					<h3 class="effect-opacity">¿Te quedas la noche?</h3>
+					<p class="effect-opacity !mb-12">Te dejamos algunas opciones donde pasar la noche si lo necesitas:</p>
+					<ul class="flex flex-col gap-2">
+						<li class="flex effect-opacity gap-1.5">
+							<div class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md">
+								<img src="/utopia.jpeg">
+							</div>
+							<div class="w-full flex flex-col items-start">
+								<h4>Hotel Utopía</h4>
+								<div class="flex flex-wrap gap-2.5">
+									<p><a href="tel:0034621123904">621 12 39 04</a></p>
+									<a href="https://hotelutopiabenalup.com/">🌐 Web</a>
+									<a href="">📍 Mapa</a>
+								</div>
+								
+							</div>
+						</li>
+						<li class="flex effect-opacity gap-1.5">
+							<div class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md">
+								<img src="/golf.jpeg">
+							</div>
+							<div class="w-full flex flex-col items-start">
+								<h4>Hostal Restaurante Benalup Golf</h4>
+								<div class="flex flex-wrap gap-2.5">
+									<p><a href="tel:0034956231903">956 23 19 03</a></p>
+									<p><a href="https://hrbenalupgolf.com/">🌐 Web</a></p>
+									<p><a href="">📍 Mapa</a></p>
+								</div>
+								
+							</div>
+						<li class="flex effect-opacity gap-1.5">
+							<div class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md">
+								<img src="/atalaya.jpeg">
+							</div>
+							<div class="w-full flex flex-col items-start">
+								<h4>Hostal Atalaya</h4>
+								<div class="flex flex-wrap gap-2.5">
+									<p><a href="tel:0034623300623">623 30 06 23</a></p>
+									<a href="https://www.grupodunna.es/alojamiento/hostal-atalaya/">🌐 Web</a>
+									<a href="">📍 Mapa</a>
+								</div>
+								
+							</div>
+						</li>
+						<li class="flex effect-opacity gap-1.5">
+							<div class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md">
+								<img src="/fairplay.jpeg">
+							</div>
+							<div class="w-full flex flex-col items-start">
+								<h4>Fairplay Golf & Spa Resort</h4>
+								<div class="flex flex-wrap gap-2.5">
+									<p><a href="tel:0034956424824">956 42 48 24</a></p>
+									<a href="https://www.fairplayresort.es/">🌐 Web</a>
+									<a href="">📍 Mapa</a>
+								</div>
+								
+							</div>
+						</li>
+					</ul>
+					<div class="my-12">
+						<p class="text-xs">Te recomendamos que reserves con antelación, ya que el hotel puede estar completo.</p>
+						<p class="text-xs">Si necesitas ayuda, no dudes en contactarnos.</p>
+					</div>
+					
 				</section>
 				<section class="mb-24 effect-opacity">
 					<h3>Regalo</h3>
 					<p>El mayor regalo que podéis hacernos es estar con vuestra presencia y compartir con nosotros la alegría</p>
 					<p>Si, además, quieres ayudarnos para darnos un capricho, te dejamos nuestro número de cuenta:</p>
+					<code class="text-green">ES76 2100 1234 5678 0012 3456</code>
 				</section>
 				<section class="mb-24 effect-opacity">
 					<h3>Álbum de fotos</h3>
@@ -216,6 +280,20 @@ const image = images[Math.floor(Math.random() * images.length)];
 				}
 			});
 		});
+
+		const cta = document.querySelector(".cta");
+
+		gsap.to(cta, {
+			scrollTrigger: {
+				scroller: ".content", 
+				trigger: cta,
+				endTrigger: ".content-wrapper",
+				pin:true,
+				pinSpacing: false,
+				start: "bottom bottom",
+				end: "bottom bottom"
+			},
+		})
 
 
 

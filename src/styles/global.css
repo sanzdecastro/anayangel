@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap');
 @import "tailwindcss";
+
 
 @theme {
     --font-Millionaire:  'Millionaire';
@@ -135,6 +137,7 @@ p, a {
     .envelope-group {
         @apply
         pointer-events-none
+        cursor-pointer
         mix-blend-luminosity
         w-full
         relative
@@ -177,6 +180,7 @@ p, a {
     w-full
     overflow-x-hidden
     overflow-y-scroll
+    max-h-[100%]
     h-[100vh];
 
     .content-wrapper {
@@ -204,6 +208,36 @@ p, a {
             font-Millionaire-Script;
         }
 
+        h4 {
+            @apply
+            text-left
+            block
+            tracking-tighter
+            mb-1
+            text-[16px]
+            font-Millionaire;
+        }
+
+        p.text-mini {
+            @apply
+            mb-1;
+        }
+
+        ul {
+            li {
+                p, a {
+                    @apply
+                    text-[12px]
+                    mb-1;
+                }
+                a {
+                    @apply
+                    underline
+                    underline-offset-4
+                    font-Millionaire-Script;
+                }
+            }
+        }
         
         .image-two {
             @apply
@@ -219,6 +253,24 @@ p, a {
                 w-full
                 object-cover;
             }
+        }
+
+        a.cta {
+            will-change: transform;
+             transform: translate3d(0,0,0);
+            @apply
+            cursor-pointer
+            max-w-[400px]
+            z-50
+            block
+            w-[100vw]
+            text-white
+            p-2
+            pb-4
+            -ml-7
+            bg-green
+            font-Millionaire-Script
+            text-2xl;
         }
 
         p {
