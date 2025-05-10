@@ -81,6 +81,59 @@ p, a {
     opacity-0;
 }
 
+img.flower-2 {
+    @apply
+    mix-blend-luminosity
+    opacity-10
+    absolute
+    -top-[30%]
+    left-0;
+}
+
+img.flower-3 {
+    @apply
+    mix-blend-luminosity
+    opacity-15
+    absolute
+    rotate-12
+    -top-[48vh]
+    left-0
+    -z-10;
+}
+
+img.flower-4 {
+    @apply
+    mix-blend-luminosity
+    opacity-15
+    absolute
+    -rotate-45
+    -top-[30vh]
+    left-[30%]
+    -z-10;
+}
+
+
+img.flower-5 {
+    @apply
+    mix-blend-luminosity
+    opacity-15
+    absolute
+    -rotate-45
+    -top-[20vh]
+    left-[30%]
+    -z-10;
+}
+
+img.flower-6 {
+    @apply
+    mix-blend-luminosity
+    opacity-15
+    absolute
+    -rotate-45
+    top-[0vh]
+    -left-[30%]
+    -z-10;
+}
 
 
 .wrapper {
