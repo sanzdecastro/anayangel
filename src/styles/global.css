@@ -47,7 +47,7 @@
 
 body {
    @apply
-   h-[100vh]
+   h-[100dvh]
    overflow-hidden
    flex
    justify-center
@@ -90,7 +90,7 @@ p, a {
     md:rounded-2xl
     bg-beige
     w-[100vw]
-    h-[100vh]
+    h-[100dvh]
     flex
     items-center
     justify-center
@@ -287,8 +287,8 @@ p, a {
     rounded-t-2xl
     p-7
     w-full
-    h-[90vh]
-    max-h-[600px]
+    h-[90dvh]
+    max-h-[700px]
     overflow-y-scroll
     bg-white
     absolute
@@ -360,6 +360,8 @@ p, a {
     }
 
     .button-wrapper {
+        @apply
+        mb-8;
         button {
             @apply
             text-regular
