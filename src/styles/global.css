@@ -242,7 +242,7 @@ p, a {
         .image-two {
             @apply
             my-16
-            rounded-md
+            rounded-xl
             h-auto
             w-full
             overflow-hidden
@@ -257,15 +257,15 @@ p, a {
 
         .cta {
             @apply
+            rounded-lg
+            mb-24
             cursor-pointer
-            max-w-[400px]
             z-50
             block
-            w-[100vw]
+            w-full
             text-white
             p-2
             pb-4
-            -ml-7
             bg-green
             font-Millionaire-Script
             text-2xl;
@@ -282,14 +282,16 @@ p, a {
 
 #contact-form {
     @apply
+    text-mini
+    max-w-[400px]
     rounded-t-2xl
     p-7
     w-full
-    h-[60vh]
-    max-h-[60vh]
+    h-[90vh]
+    max-h-[90vh]
     overflow-y-scroll
     bg-white
-    fixed
+    absolute
     left-0
     bottom-0
     z-90;
@@ -299,6 +301,7 @@ p, a {
         mb-10;
         legend {
             @apply
+            text-regular
             mb-4
             font-Millionaire;
         }
@@ -317,9 +320,16 @@ p, a {
 
     label {
         @apply
+        text-regular
         mb-2
         block
         font-Millionaire;
+    }
+
+    .remove-persona {
+        @apply
+        font-Millionaire-Script
+        text-mini;
     }
 
     input, textarea {
@@ -335,6 +345,7 @@ p, a {
 
     button#add-persona {
         @apply
+        float-end
         underline
         underline-offset-4
         font-Millionaire;
@@ -342,12 +353,16 @@ p, a {
 
     .persona {
         @apply
-        mb-10;
+        border-t
+        border-gray-100
+        pt-4
+        mb-8;
     }
 
     .button-wrapper {
         button {
             @apply
+            text-regular
             mt-8
             w-full
             bg-green

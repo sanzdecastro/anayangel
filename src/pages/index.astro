@@ -192,8 +192,10 @@ const image = images[Math.floor(Math.random() * images.length)];
               <img class="w-36 mix-blend-multiply" src="/qr.jpg" />
             </div>
           </section>
-          <section class="mb-24 effect-opacity h-[50vh] flex justify-center items-center">
+          <section class="mb-24 effect-opacity h-[50vh] flex flex-col gap-4 justify-center items-center">
             <h3>¡Os esperamos! ❤️</h3>
+			<div class="cta">Confirmar asistencia</div>
+
           </section>
         </section>
       </div>
@@ -201,7 +203,8 @@ const image = images[Math.floor(Math.random() * images.length)];
     <form id="contact-form">
 		<p class="close-form absolute top-0 right-0 p-7">Cerrar</p>
       <fieldset>
-        <legend>¿Vas a asistir?</legend>
+        <legend class="!mb-3">¿Vas a asistir?</legend>
+		<p class="mb-4">Puedes añadir acompañante/s debajo</p>
         <section class="flex gap-4">
           <div>
             <input type="radio" id="si-1" name="service" value="Sí" required />
@@ -414,19 +417,19 @@ const image = images[Math.floor(Math.random() * images.length)];
         });
       });
 
-      const cta = document.querySelector(".cta");
+    const cta = document.querySelectorAll(".cta");
 
-      gsap.to(cta, {
-        scrollTrigger: {
-          scroller: ".content",
-          trigger: cta,
-          endTrigger: ".content-wrapper",
-          pin: true,
-          pinSpacing: false,
-          start: "bottom bottom",
-          end: "bottom bottom",
-        },
-      });
+    //   gsap.to(cta, {
+    //     scrollTrigger: {
+    //       scroller: ".content",
+    //       trigger: cta,
+    //       endTrigger: ".content-wrapper",
+    //       pin: true,
+    //       pinSpacing: false,
+    //       start: "bottom bottom",
+    //       end: "bottom bottom",
+    //     },
+    //   });
 
 	  const form = document.querySelector("#contact-form");
 	  const close = document.querySelector(".close-form");
@@ -436,13 +439,16 @@ const image = images[Math.floor(Math.random() * images.length)];
 	});
 
 	function openForm() {	
-		cta?.addEventListener("click", () => {
-			gsap.to(form, {
-				yPercent: 0,
-				duration: 1,
-				ease: "power2.inOut",
+		cta?.forEach((el) => {
+			el.addEventListener("click", () => {
+				gsap.to(form, {
+					yPercent: 0,
+					duration: 1,
+					ease: "power2.inOut",
+				});
 			});
 		});
+		
 	}	
 
 	function closeForm() {	
@@ -518,7 +524,7 @@ const image = images[Math.floor(Math.random() * images.length)];
         const removeBtn = document.createElement("button");
         removeBtn.type = "button";
         removeBtn.className = "remove-persona text-red-600 text-sm";
-        removeBtn.textContent = "❌ Quitar";
+        removeBtn.textContent = "Quitar";
         labelWrapper.appendChild(removeBtn);
         addRemoveListener(removeBtn);
 
