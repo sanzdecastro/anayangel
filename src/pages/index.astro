@@ -1,315 +1,576 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
 
 const images = ["foto_1", "foto_2"];
 const image = images[Math.floor(Math.random() * images.length)];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
-
 ---
 
 <Layout>
+  <div class="wrapper">
+    <h1 class="intro-names z-10">Ana y Ángel</h1>
+    <div class="envelope-wrapper z-10">
+      <div class="envelope-group">
+        <img src="/sobre-close.png" class="sobre-close" />
+        <img src="/sobre-open.png" class="sobre-open" />
+      </div>
+    </div>
+    <p class="introduction-text">
+      ¡Tenemos una gran noticia <br />que queremos compartir contigo!
+    </p>
 
-	
-	<div class="wrapper">
-		
-		
-		<h1 class="intro-names z-10">Ana y Ángel</h1>
-		<div class="envelope-wrapper z-10">
-			<div class="envelope-group">
-				<img src="/sobre-close.png" class="sobre-close" />
-				<img src="/sobre-open.png" class="sobre-open" />
-			</div>
-		</div>
-		<p class="introduction-text">¡Tenemos una gran noticia <br>que queremos compartir contigo!</p>
+    <div class="image-wrapper mix-blend-multiply absolute">
+      <img src="/flower1.jpg" class="flower-1" />
+    </div>
 
-		<div class="image-wrapper mix-blend-multiply absolute" >
-			<img src="/flower1.jpg" class="flower-1" />
-		</div>
-		
-		<div class="content">
-			<div class="content-wrapper">
-				<h2 class="effect-opacity">Ana y Ángel</h2>
-				<p class="effect-opacity mb-16">¡Nos casamos!</p>
-				<div class="image-wrapper image-two rotate-3 mb-24">
-					<img src="/pareja.jpg" />
-				</div>
-				
-				<section class="mb-24 circle-container relative w-full h-full flex items-center aspect-square">
-					<img class="circle absolute top-0 scale-120 left-0 opacity-10 animate-[spin_10s_linear_infinite]" src="/rotate.svg">
-					<div class="w-full effect-opacity h-full absolute top-0 left-0 flex flex-col justify-center items-center">
-						<p class="!mb-0.5">18 de octubre de 2025</p>
-						<div class="flex justify-center gap-2"><p class="!mb-0.5">13:00h</p><span class="font-Millionaire-Script">Casas Viejas</span><p class="!mb-0.5">Benalup</p></div>
-						<p class="!mb-0.5">Fairplay Golf & Spa Resort</p>
-					</div>
-				</section>
-				<section class="mb-24 effect-opacity">
-					<p>Estamos encantados <br>de invitarte a <span class="font-Millionaire-Script">nuestra boda</span></p>
-					<p>El próximo 18 de octubre <br> nos gustaría <span class="font-Millionaire-Script">compartir contigo</span> <br>este día tan especial.</p>
-					<p>¡Confírmanos que vienes!</p>
-				</section>
+    <div class="content">
+      <div class="content-wrapper">
+        <h2 class="effect-opacity">Ana y Ángel</h2>
+        <p class="effect-opacity mb-16">¡Nos casamos!</p>
+        <div class="image-wrapper image-two rotate-3 mb-24">
+          <img src="/pareja.jpg" />
+        </div>
 
-				<a class="cta">Confirmar asistencia</a>
+        <section
+          class="mb-24 circle-container relative w-full h-full flex items-center aspect-square"
+        >
+          <img
+            class="circle absolute top-0 scale-120 left-0 opacity-10 animate-[spin_10s_linear_infinite]"
+            src="/rotate.svg"
+          />
+          <div
+            class="w-full effect-opacity h-full absolute top-0 left-0 flex flex-col justify-center items-center"
+          >
+            <p class="!mb-0.5">18 de octubre de 2025</p>
+            <div class="flex justify-center gap-2">
+              <p class="!mb-0.5">13:00h</p><span class="font-Millionaire-Script"
+                >Casas Viejas</span
+              ><p class="!mb-0.5">Benalup</p>
+            </div>
+            <p class="!mb-0.5">Fairplay Golf & Spa Resort</p>
+          </div>
+        </section>
+        <section class="mb-24 effect-opacity">
+          <p>
+            Estamos encantados <br />de invitarte a <span
+              class="font-Millionaire-Script">nuestra boda</span
+            >
+          </p>
+          <p>
+            El próximo 18 de octubre <br /> nos gustaría <span
+              class="font-Millionaire-Script">compartir contigo</span
+            >
+            <br />este día tan especial.
+          </p>
+          <p>¡Confírmanos que vienes!</p>
+        </section>
 
-				<section class="mb-24 effect-opacity">
-					<h3 class="!mb-10">Lugar<br> de celebración</h3>
-					<div class="image-wrapper mb-10 aspect-square overflow-hidden rounded-md">
-						<img class="h-full" src="/spa.jpg" />
-					</div>
-					<div class="flex justify-center items-center flex-col gap-2 mb-5">
-						<a href="https://www.fairplayresort.com/es/"><span class="font-Millionaire-Script">Fairplay Golf & Spa Resort</span><br> en Benalup</a>
-						<a class="underline underline-offset-4" target="_blank" href="https://maps.app.goo.gl/Q2QahHd6C9pj8MVy9">Ver en el mapa</a>
-					</div>
-					
-				</section>
-				<section class="mb-24 ">
-					<h3 class="effect-opacity">¿Te quedas la noche?</h3>
-					<p class="effect-opacity !mb-12">Te dejamos algunas opciones donde pasar la noche si lo necesitas:</p>
-					<ul class="flex flex-col gap-2">
-						<li class="flex effect-opacity gap-1.5">
-							<div class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md">
-								<img src="/utopia.jpeg">
-							</div>
-							<div class="w-full flex flex-col items-start">
-								<h4>Hotel Utopía</h4>
-								<div class="flex flex-wrap gap-2.5">
-									<p><a href="tel:0034621123904">621 12 39 04</a></p>
-									<a href="https://hotelutopiabenalup.com/">🌐 Web</a>
-									<a href="">📍 Mapa</a>
-								</div>
-								
-							</div>
-						</li>
-						<li class="flex effect-opacity gap-1.5">
-							<div class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md">
-								<img src="/golf.jpeg">
-							</div>
-							<div class="w-full flex flex-col items-start">
-								<h4>Hostal Restaurante Benalup Golf</h4>
-								<div class="flex flex-wrap gap-2.5">
-									<p><a href="tel:0034956231903">956 23 19 03</a></p>
-									<p><a href="https://hrbenalupgolf.com/">🌐 Web</a></p>
-									<p><a href="">📍 Mapa</a></p>
-								</div>
-								
-							</div>
-						<li class="flex effect-opacity gap-1.5">
-							<div class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md">
-								<img src="/atalaya.jpeg">
-							</div>
-							<div class="w-full flex flex-col items-start">
-								<h4>Hostal Atalaya</h4>
-								<div class="flex flex-wrap gap-2.5">
-									<p><a href="tel:0034623300623">623 30 06 23</a></p>
-									<a href="https://www.grupodunna.es/alojamiento/hostal-atalaya/">🌐 Web</a>
-									<a href="">📍 Mapa</a>
-								</div>
-								
-							</div>
-						</li>
-						<li class="flex effect-opacity gap-1.5">
-							<div class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md">
-								<img src="/fairplay.jpeg">
-							</div>
-							<div class="w-full flex flex-col items-start">
-								<h4>Fairplay Golf & Spa Resort</h4>
-								<div class="flex flex-wrap gap-2.5">
-									<p><a href="tel:0034956424824">956 42 48 24</a></p>
-									<a href="https://www.fairplayresort.es/">🌐 Web</a>
-									<a href="">📍 Mapa</a>
-								</div>
-								
-							</div>
-						</li>
-					</ul>
-					<div class="my-12">
-						<p class="text-xs">Te recomendamos que reserves con antelación, ya que el hotel puede estar completo.</p>
-						<p class="text-xs">Si necesitas ayuda, no dudes en contactarnos.</p>
-					</div>
-					
-				</section>
-				<section class="mb-24 effect-opacity">
-					<h3>Regalo</h3>
-					<p>El mayor regalo que podéis hacernos es estar con vuestra presencia y compartir con nosotros la alegría</p>
-					<p>Si, además, quieres ayudarnos para darnos un capricho, te dejamos nuestro número de cuenta:</p>
-					<code class="text-green">ES76 2100 1234 5678 0012 3456</code>
-				</section>
-				<section class="mb-24 effect-opacity">
-					<h3>Álbum de fotos</h3>
-					<p>¡Hemos creado un álbum digital donde nos gustaría que nos pasaras las fotos después de la ceremonia!</p>
-			
-					<div class="flex justify-center">
-						<img class="w-36 mix-blend-multiply" src="/qr.jpg">
-					</div>
-					
-				</section>
-				<section class="mb-24 effect-opacity h-[50vh]">
-					<h3>¡Os esperamos!</h3>
-				</section>
-			</div>
-			
-			
-		</div>
-	</div>
-		
-	<script>
-		import gsap from "gsap";
-		import { ScrollTrigger } from "gsap/ScrollTrigger";
-		gsap.registerPlugin(ScrollTrigger);
+        <div class="cta">Confirmar asistencia</div>
 
-		// Animación intro
-		const tl = gsap.timeline({delay: 0.5});
+        <section class="mb-24 effect-opacity">
+          <h3 class="!mb-10">Lugar<br /> de celebración</h3>
+          <div
+            class="image-wrapper mb-10 aspect-square overflow-hidden rounded-md"
+          >
+            <img class="h-full" src="/spa.jpg" />
+          </div>
+          <div class="flex justify-center items-center flex-col gap-2 mb-5">
+            <a href="https://www.fairplayresort.com/es/"
+              ><span class="font-Millionaire-Script"
+                >Fairplay Golf & Spa Resort</span
+              ><br /> en Benalup</a
+            >
+            <a
+              class="underline underline-offset-4"
+              target="_blank"
+              href="https://maps.app.goo.gl/Q2QahHd6C9pj8MVy9">Ver en el mapa</a
+            >
+          </div>
+        </section>
+        <section class="mb-24">
+          <h3 class="effect-opacity">¿Te quedas la noche?</h3>
+          <p class="effect-opacity !mb-12">
+            Te dejamos algunas opciones donde pasar la noche si lo necesitas:
+          </p>
+          <ul class="flex flex-col gap-2">
+            <li class="flex effect-opacity gap-1.5">
+              <div
+                class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md"
+              >
+                <img src="/utopia.jpeg" />
+              </div>
+              <div class="w-full flex flex-col items-start">
+                <h4>Hotel Utopía</h4>
+                <div class="flex flex-wrap gap-2.5">
+                  <p><a href="tel:0034621123904">621 12 39 04</a></p>
+                  <a href="https://hotelutopiabenalup.com/">🌐 Web</a>
+                  <a href="">📍 Mapa</a>
+                </div>
+              </div>
+            </li>
+            <li class="flex effect-opacity gap-1.5">
+              <div
+                class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md"
+              >
+                <img src="/golf.jpeg" />
+              </div>
+              <div class="w-full flex flex-col items-start">
+                <h4>Hostal Restaurante Benalup Golf</h4>
+                <div class="flex flex-wrap gap-2.5">
+                  <p><a href="tel:0034956231903">956 23 19 03</a></p>
+                  <p><a href="https://hrbenalupgolf.com/">🌐 Web</a></p>
+                  <p><a href="">📍 Mapa</a></p>
+                </div>
+              </div>
+              <li class="flex effect-opacity gap-1.5">
+                <div
+                  class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md"
+                >
+                  <img src="/atalaya.jpeg" />
+                </div>
+                <div class="w-full flex flex-col items-start">
+                  <h4>Hostal Atalaya</h4>
+                  <div class="flex flex-wrap gap-2.5">
+                    <p><a href="tel:0034623300623">623 30 06 23</a></p>
+                    <a
+                      href="https://www.grupodunna.es/alojamiento/hostal-atalaya/"
+                      >🌐 Web</a
+                    >
+                    <a href="">📍 Mapa</a>
+                  </div>
+                </div>
+              </li>
+              <li class="flex effect-opacity gap-1.5">
+                <div
+                  class="!w-[100px] image-wrapper aspect-square overflow-hidden rounded-md"
+                >
+                  <img src="/fairplay.jpeg" />
+                </div>
+                <div class="w-full flex flex-col items-start">
+                  <h4>Fairplay Golf & Spa Resort</h4>
+                  <div class="flex flex-wrap gap-2.5">
+                    <p><a href="tel:0034956424824">956 42 48 24</a></p>
+                    <a href="https://www.fairplayresort.es/">🌐 Web</a>
+                    <a href="">📍 Mapa</a>
+                  </div>
+                </div>
+              </li>
+            </li>
+            <div class="my-12">
+              <p class="text-xs">
+                Te recomendamos que reserves con antelación, ya que el hotel
+                puede estar completo.
+              </p>
+              <p class="text-xs">
+                Si necesitas ayuda, no dudes en contactarnos.
+              </p>
+            </div>
+          </ul>
+          <section class="mb-24 effect-opacity">
+            <h3>Regalo</h3>
+            <p>
+              El mayor regalo que podéis hacernos es estar con vuestra presencia
+              y compartir con nosotros la alegría
+            </p>
+            <p>
+              Si, además, quieres ayudarnos para darnos un capricho, te dejamos
+              nuestro número de cuenta:
+            </p>
+            <code class="text-green">ES76 2100 1234 5678 0012 3456</code>
+          </section>
+          <section class="mb-24 effect-opacity">
+            <h3>Álbum de fotos</h3>
+            <p>
+              ¡Hemos creado un álbum digital donde nos gustaría que nos pasaras
+              las fotos después de la ceremonia!
+            </p>
 
-		const back = document.querySelector(".flower-1");
-		const nameIntro = document.querySelector(".intro-names");
-		const intro = document.querySelector(".introduction-text");
-		const envelopeGroup = document.querySelector(".envelope-group");
-		const envelopeGroupClosed = document.querySelector(".envelope-group .sobre-close");
-		const envelopeGroupOpened = document.querySelector(".envelope-group .sobre-open");
+            <div class="flex justify-center">
+              <img class="w-36 mix-blend-multiply" src="/qr.jpg" />
+            </div>
+          </section>
+          <section class="mb-24 effect-opacity h-[50vh] flex justify-center items-center">
+            <h3>¡Os esperamos! ❤️</h3>
+          </section>
+        </section>
+      </div>
+    </div>
+    <form id="contact-form">
+		<p class="close-form absolute top-0 right-0 p-7">Cerrar</p>
+      <fieldset>
+        <legend>¿Vas a asistir?</legend>
+        <section class="flex gap-4">
+          <div>
+            <input type="radio" id="si-1" name="service" value="Sí" required />
+            <label for="si-1">Sí</label>
+          </div>
+          <div>
+            <input type="radio" id="no-1" name="service" value="No" required />
+            <label for="no-1">No</label>
+          </div>
+        </section>
+      </fieldset>
 
+      <div>
+        <label for="email">Email*</label>
+        <input id="email" type="email" name="email" required />
+      </div>
 
-		const content = document.querySelector(".content");
+      <div id="personas-wrapper">
+        <div class="persona">
+          <div class="flex justify-between items-center mb-2">
+            <label for="name-1">Nombre*</label>
+          </div>
+          <input id="name-1" name="name-1" type="text" required />
 
-		gsap.set(envelopeGroup, {
-			xPercent: -150,
-			rotate: 180,
-		});
+          <label for="message-1">Alergías*</label>
+          <textarea id="message-1" name="message-1"></textarea>
+        </div>
+      </div>
 
-		gsap.set(back, {
-			autoAlpha: 0,
-		});
+      <button type="button" id="add-persona" class="my-4"
+        >Añadir otra persona</button
+      >
 
-		gsap.set(intro, {
-			yPercent: -350,
-		});
+      <div class="button-wrapper">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
 
-		gsap.set(content, {
-			yPercent: 100,
-		});
+    <script>
+      import gsap from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+      gsap.registerPlugin(ScrollTrigger);
 
-		tl.to(back, {
-			autoAlpha: .07,
-			duration: 1,
-			ease: "power2.inOut",
-		}).to(nameIntro, {
-			autoAlpha: 1,
-			duration: 1,
-			ease: "power2.inOut",
-		},'<').to(intro, {
-			autoAlpha: 1,
-			duration: 1,
-			ease: "power2.inOut",
-		}).to(intro, {
-			delay: 1,
-			autoAlpha: 1,
-			yPercent: 0,
-			duration: .5,
-			ease: "power2.inOut",
-		}).to(envelopeGroup, {
-			xPercent: 0,
-			rotate: 0,
-			duration: 1,
-			ease: "power2.inOut",
-			onComplete: () => {
-				envelopeGroup?.classList.add("pointer-events-auto");
-				openEnvelope();
-				const tlPulse = gsap.timeline({
-					repeat: -1,
-					yoyo: true,
-					delay: 0.5,
-				});
-				tlPulse.to(envelopeGroupClosed, {
-					scale: 1.05,
-					duration: 0.5,
-					rotate: 5,
-					yPercent: -4,
-					xPercent: 2,
-				});
-			},
-		},'<');
+      // Animación intro
+      const tl = gsap.timeline({ delay: 0.5 });
 
-		function openEnvelope() {
-			console.log("click")
-			envelopeGroup?.addEventListener("click", () => {
-				envelopeGroupClosed?.classList.add("hidden");
-				envelopeGroupOpened?.classList.add("block");
+      const back = document.querySelector(".flower-1");
+      const nameIntro = document.querySelector(".intro-names");
+      const intro = document.querySelector(".introduction-text");
+      const envelopeGroup = document.querySelector(".envelope-group");
+      const envelopeGroupClosed = document.querySelector(
+        ".envelope-group .sobre-close"
+      );
+      const envelopeGroupOpened = document.querySelector(
+        ".envelope-group .sobre-open"
+      );
 
-				const imageTwo = document.querySelector(".image-two");
+      const content = document.querySelector(".content");
 
-				const tlOutEnvelope = gsap.timeline({
-					delay: 0.5,
-				});
+      gsap.set(envelopeGroup, {
+        xPercent: -150,
+        rotate: 180,
+      });
 
-				tlOutEnvelope.to(intro, {
-					autoAlpha: 0,
-				},'<').to(nameIntro, {
-					autoAlpha:0,
-				},'<').to(envelopeGroupOpened, {
-					yPercent: 300,
-					rotate: -25,
-					duration: 1,
-					ease: "power2.inOut",
-				},'<').to(content, {
-					autoAlpha:1,
-				},'<').to(content, {
-					yPercent: 0,
-					duration: 1,
-				},'<').to(imageTwo, {
-					rotate: -5,
-					duration: 1,
-					ease: "power2.inOut",
-				})
-			})
-		}
+      gsap.set(back, {
+        autoAlpha: 0,
+      });
 
-		const elems = document.querySelectorAll(".effect-opacity");
+      gsap.set(intro, {
+        yPercent: -350,
+      });
 
-		elems.forEach(el => {		
-			gsap.set(el, { 
-				autoAlpha: 0,
-				yPercent: 10,
-			});
+      gsap.set(content, {
+        yPercent: 100,
+      });
 
-			gsap.to(el, {
-				autoAlpha: 1,
-				duration: 1,
+      tl.to(back, {
+        autoAlpha: 0.07,
+        duration: 1,
+        ease: "power2.inOut",
+      })
+        .to(
+          nameIntro,
+          {
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power2.inOut",
+          },
+          "<"
+        )
+        .to(intro, {
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        })
+        .to(intro, {
+          delay: 1,
+          autoAlpha: 1,
+          yPercent: 0,
+          duration: 0.5,
+          ease: "power2.inOut",
+        })
+        .to(
+          envelopeGroup,
+          {
+            xPercent: 0,
+            rotate: 0,
+            duration: 1,
+            ease: "power2.inOut",
+            onComplete: () => {
+              envelopeGroup?.classList.add("pointer-events-auto");
+              openEnvelope();
+              const tlPulse = gsap.timeline({
+                repeat: -1,
+                yoyo: true,
+                delay: 0.5,
+              });
+              tlPulse.to(envelopeGroupClosed, {
+                scale: 1.05,
+                duration: 0.5,
+                rotate: 5,
+                yPercent: -4,
+                xPercent: 2,
+              });
+            },
+          },
+          "<"
+        );
+
+      function openEnvelope() {
+        console.log("click");
+        envelopeGroup?.addEventListener("click", () => {
+          envelopeGroupClosed?.classList.add("hidden");
+          envelopeGroupOpened?.classList.add("block");
+
+          const imageTwo = document.querySelector(".image-two");
+
+          const tlOutEnvelope = gsap.timeline({
+            delay: 0.5,
+          });
+
+          tlOutEnvelope
+            .to(
+              intro,
+              {
+                autoAlpha: 0,
+              },
+              "<"
+            )
+            .to(
+              nameIntro,
+              {
+                autoAlpha: 0,
+              },
+              "<"
+            )
+            .to(
+              envelopeGroupOpened,
+              {
+                yPercent: 300,
+                rotate: -25,
+                duration: 1,
+                ease: "power2.inOut",
+              },
+              "<"
+            )
+            .to(
+              content,
+              {
+                autoAlpha: 1,
+              },
+              "<"
+            )
+            .to(
+              content,
+              {
+                yPercent: 0,
+                duration: 1,
+              },
+              "<"
+            )
+            .to(imageTwo, {
+              rotate: -5,
+              duration: 1,
+              ease: "power2.inOut",
+            });
+        });
+      }
+
+      const elems = document.querySelectorAll(".effect-opacity");
+
+      elems.forEach((el) => {
+        gsap.set(el, {
+          autoAlpha: 0,
+          yPercent: 10,
+        });
+
+        gsap.to(el, {
+          autoAlpha: 1,
+          duration: 1,
+          yPercent: 0,
+          scrollTrigger: {
+            scroller: ".content",
+            trigger: el,
+            start: "top bottom",
+            end: "center center",
+            scrub: 1,
+            toggleActions: "play none none none",
+          },
+        });
+      });
+
+      const cta = document.querySelector(".cta");
+
+      gsap.to(cta, {
+        scrollTrigger: {
+          scroller: ".content",
+          trigger: cta,
+          endTrigger: ".content-wrapper",
+          pin: true,
+          pinSpacing: false,
+          start: "bottom bottom",
+          end: "bottom bottom",
+        },
+      });
+
+	  const form = document.querySelector("#contact-form");
+	  const close = document.querySelector(".close-form");
+
+	 gsap.set(form, {
+		yPercent: 100,
+	});
+
+	function openForm() {	
+		cta?.addEventListener("click", () => {
+			gsap.to(form, {
 				yPercent: 0,
+				duration: 1,
 				ease: "power2.inOut",
-				scrollTrigger: {
-					scroller: ".content", 
-					trigger: el,
-					start: "top bottom",      
-					end:   "center center",   
-					scrub: 1,
-					toggleActions: "play none none none",
-				}
 			});
 		});
+	}	
 
-		const cta = document.querySelector(".cta");
+	function closeForm() {	
+		close?.addEventListener("click", () => {
+			gsap.to(form, {
+				yPercent: 100,
+				duration: 1,
+				ease: "power2.inOut",
+			});
+		});
+	}	
 
-		gsap.to(cta, {
-			scrollTrigger: {
-				scroller: ".content", 
-				trigger: cta,
-				endTrigger: ".content-wrapper",
-				pin:true,
-				pinSpacing: false,
-				start: "bottom bottom",
-				end: "bottom bottom"
-			},
-		})
+	openForm();
+	closeForm();
+    </script>
 
+    <script type="module">
+      let personaCount = 1;
+      const wrapper = document.getElementById("personas-wrapper");
+      const addBtn = document.getElementById("add-persona");
 
+      function addRemoveListener(button) {
+        button.addEventListener("click", () => {
+          const persona = button.closest(".persona");
+          if (wrapper.children.length > 1) {
+            persona.remove();
+            renumerarCampos();
+          } else {
+            alert("Debe haber al menos una persona.");
+          }
+        });
+      }
 
-	</script>
-	
-	
+      function renumerarCampos() {
+        document.querySelectorAll(".persona").forEach((div, index) => {
+          const i = index + 1;
+          div.querySelectorAll("input, textarea, label").forEach((el) => {
+            if (el.tagName === "LABEL")
+              el.htmlFor = el.htmlFor?.replace(/\d+$/, "") + i;
+            if (el.name) el.name = el.name.replace(/\d+$/, "") + i;
+            if (el.id) el.id = el.id.replace(/\d+$/, "") + i;
+          });
+        });
+        personaCount = wrapper.children.length;
+      }
+
+      addBtn.addEventListener("click", () => {
+        personaCount++;
+        const last = wrapper.querySelector(".persona:last-of-type");
+        const clone = last.cloneNode(true);
+
+        // Limpiar campos
+        clone
+          .querySelectorAll("input, textarea")
+          .forEach((el) => (el.value = ""));
+
+        // Añadir botón "Quitar" si no existe
+        let labelWrapper = clone.querySelector(".flex");
+        if (!labelWrapper) {
+          // Crear encabezado de campo si no existe
+          labelWrapper = document.createElement("div");
+          labelWrapper.className = "flex justify-between items-center mb-2";
+          const nameLabel = document.createElement("label");
+          nameLabel.textContent = "Nombre*";
+          nameLabel.setAttribute("for", `name-${personaCount}`);
+          labelWrapper.appendChild(nameLabel);
+          clone.insertBefore(labelWrapper, clone.firstChild);
+        }
+
+        // Quitar cualquier botón previo
+        clone.querySelector(".remove-persona")?.remove();
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "remove-persona text-red-600 text-sm";
+        removeBtn.textContent = "❌ Quitar";
+        labelWrapper.appendChild(removeBtn);
+        addRemoveListener(removeBtn);
+
+        wrapper.appendChild(clone);
+        renumerarCampos();
+      });
+    </script>
+
+    <script type="module">
+      const form = document.getElementById("contact-form");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const personas = [];
+
+        // Recorre cada bloque de persona (solo nombre + alergias)
+        document.querySelectorAll(".persona").forEach((personaDiv, index) => {
+          const name =
+            personaDiv.querySelector(`[name="name-${index + 1}"]`)?.value || "";
+          const message =
+            personaDiv.querySelector(`[name="message-${index + 1}"]`)?.value ||
+            "";
+
+          personas.push({ name, message });
+        });
+
+        // Email y asistencia (únicos)
+        const email = document.querySelector('[name="email"]')?.value || "";
+        const asistencia =
+          document.querySelector('[name="service"]:checked')?.value || "";
+
+        const res = await fetch(`/api/send-mail`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            asistencia,
+            personas,
+          }),
+        });
+
+        if (res.ok) {
+          alert("¡Correo enviado!");
+          form.reset();
+        } else {
+          const err = await res.json();
+          alert("Error al enviar: " + err.error);
+        }
+      });
+    </script>
+  </div>
+
+  <style></style>
 </Layout>
-
-<style>
-	
-</style>
-

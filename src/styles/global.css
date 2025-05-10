@@ -181,7 +181,7 @@ p, a {
     overflow-x-hidden
     overflow-y-scroll
     max-h-[100%]
-    h-[100vh];
+    h-[100dvh];
 
     .content-wrapper {
         @apply
@@ -255,9 +255,7 @@ p, a {
             }
         }
 
-        a.cta {
-            will-change: transform;
-             transform: translate3d(0,0,0);
+        .cta {
             @apply
             cursor-pointer
             max-w-[400px]
@@ -280,4 +278,84 @@ p, a {
     }
 
    
+}
+
+#contact-form {
+    @apply
+    rounded-t-2xl
+    p-7
+    w-full
+    h-[60vh]
+    max-h-[60vh]
+    overflow-y-scroll
+    bg-white
+    fixed
+    left-0
+    bottom-0
+    z-90;
+
+    fieldset {
+        @apply
+        mb-10;
+        legend {
+            @apply
+            mb-4
+            font-Millionaire;
+        }
+        div {
+            @apply
+            flex
+            gap-2
+            items-center;
+            input {
+                @apply
+                mb-0
+                w-auto;
+            }
+        }
+    }
+
+    label {
+        @apply
+        mb-2
+        block
+        font-Millionaire;
+    }
+
+    input, textarea {
+        @apply
+        mb-6
+        p-2
+        font-Millionaire
+        border
+        border-gray-200
+        rounded-md
+        w-full
+    }
+
+    button#add-persona {
+        @apply
+        underline
+        underline-offset-4
+        font-Millionaire;
+    }
+
+    .persona {
+        @apply
+        mb-10;
+    }
+
+    .button-wrapper {
+        button {
+            @apply
+            mt-8
+            w-full
+            bg-green
+            text-white
+            p-3
+            rounded-md
+            font-Millionaire-Script;
+        }
+    }
+    
 }
