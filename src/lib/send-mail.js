@@ -31,7 +31,7 @@ export async function sendMail({ email, asistencia, personas }) {
 
   const result = await resend.emails.send({
     from: 'Formulario web <no-reply@santisanchez.dev>',
-    to: 'sanzdecastro@gmail.com, anayangel2025@gmail.com',
+    to: ['sanzdecastro@gmail.com', 'anayangel2025@gmail.com'],
     subject: 'Confirmación de asistencia (web)',
     html,
     replyTo: email,
