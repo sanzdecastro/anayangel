@@ -16,7 +16,8 @@ export async function sendMail({ email, asistencia, personas }) {
     <div style="margin-bottom: 1.5rem;">
       <h3>Persona ${index + 1}</h3>
       <p><strong>Nombre:</strong> ${p.name}</p>
-      <p><strong>Alergias / mensaje:</strong> ${p.message}</p>
+      <p><strong>Comida</strong> ${p.comida}</p>
+      <p><strong>Alergias</strong> ${p.message}</p>
     </div>
   `).join('');
 
