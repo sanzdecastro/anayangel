@@ -406,6 +406,10 @@ img.flower-7 {
     @apply mb-8;
     button {
       @apply text-2xl
+      items-center
+      flex
+      justify-center
+      gap-3
             mt-8
             w-full
             bg-green
@@ -413,6 +417,17 @@ img.flower-7 {
             p-3
             rounded-md
             font-Millionaire-Script;
+        .fas {
+            @apply
+                hidden;
+            }
+            &.loading {
+                .fas {
+                    @apply
+                    block;
+                }
+            }
     }
+    
   }
 }

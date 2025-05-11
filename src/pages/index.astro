@@ -301,7 +301,7 @@ Escanea este código o pulsa sobre él para subir tus fotos y ayudar a construir
       >
 
       <div class="button-wrapper">
-        <button type="submit">Enviar</button>
+        <button type="submit"><i class="fas fa-spinner fa-spin"></i>Enviar</button>
       </div>
     </form>
 
@@ -602,43 +602,54 @@ Escanea este código o pulsa sobre él para subir tus fotos y ayudar a construir
 
 
 
-    <script type="module">
+<script type="module">
   const form = document.getElementById("contact-form");
+  const submitButton = form.querySelector('button[type="submit"]');
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const personas = [];
+    // 1️⃣ Añadimos la clase y deshabilitamos el botón
+    submitButton.classList.add("loading");
+    submitButton.disabled = true;
 
+    const personas = [];
     document.querySelectorAll(".persona").forEach((personaDiv, index) => {
       const i = index + 1;
-
       const name = personaDiv.querySelector(`[name="name-${i}"]`)?.value.trim() || "";
       const message = personaDiv.querySelector(`[name="message-${i}"]`)?.value.trim() || "";
       const comida = personaDiv.querySelector(`[name="comida-${i}"]:checked`)?.value || "";
-
       personas.push({ name, message, comida });
     });
 
     const email = document.querySelector('[name="email"]')?.value.trim() || "";
     const asistencia = document.querySelector('[name="service"]:checked')?.value || "";
 
-    const res = await fetch(`/api/send-mail`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email,
-        asistencia,
-        personas,
-      }),
-    });
+    try {
+      const res = await fetch(`/api/send-mail`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          asistencia,
+          personas,
+        }),
+      });
 
-    if (res.ok) {
-      alert("💌¡Correo enviado!");
-      form.reset();
-    } else {
-      const err = await res.json();
-      alert("Error al enviar: " + err.error);
+      if (res.ok) {
+        alert("💌¡Correo enviado!");
+        form.reset();
+      } else {
+        const err = await res.json();
+        alert("Error al enviar: " + err.error);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Ha ocurrido un error inesperado.");
+    } finally {
+      // 2️⃣ Quitamos la clase y volvemos a habilitar
+      submitButton.classList.remove("loading");
+      submitButton.disabled = false;
     }
   });
 </script>
