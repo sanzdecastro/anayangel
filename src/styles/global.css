@@ -258,14 +258,10 @@ img.flower-7 {
       li {
         p,
         a {
-          @apply text-[12px]
+          @apply text-[13px]
                     mb-1;
         }
-        a {
-          @apply underline
-                    underline-offset-4
-                    font-Millionaire-Script;
-        }
+       
       }
     }
 
@@ -402,7 +398,7 @@ img.flower-7 {
   .persona {
     @apply border-t
         border-gray-100
-        pt-4
+        pt-8
         mb-8;
   }
 
